@@ -1,0 +1,37 @@
+*{
+    font-family: Verdana, Sans-serif;
+}
+header, h1, h2{
+    margin-top: 5vh;
+    text-align: center;
+}
+p{
+    text-align: center;
+
+}
+form{
+    width:60%;
+    margin: auto;
+}
+label, input {
+    display: inline-block;
+}
+
+label {
+    width: 20%;
+    text-align: left;
+}
+.form-group{
+    width = 100%;
+    text-align: center;
+}
+
+
+.additional-variable{
+    display: none;
+}
+
+#calculate-button{
+    margin-top: 5vh;
+}
+
