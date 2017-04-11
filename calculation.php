@@ -1,12 +1,9 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "platooning_system";
+require_once 'db_config.php';
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -17,25 +14,25 @@ $result = $conn->query($sql);
 
 /** Variables */
 
-$VehicleMass = mysqli_real_escape_string($conn, $_POST["Mass"]);
+$VehicleMass = (float) $_POST["Mass"];
 echo $VehicleMass;
 echo "<br>";
-$VehicleVelocity = mysqli_real_escape_string($conn, $_POST["VehicleVelocity"]);
+$VehicleVelocity = (float) $_POST["VehicleVelocity"];
 echo $VehicleVelocity;
 echo "<br>";
-$VehicleFrontArea = mysqli_real_escape_string($conn, $_POST["VehicleFrontArea"]);
+$VehicleFrontArea = (float) $_POST["VehicleFrontArea"];
 echo $VehicleFrontArea;
 echo "<br>";
-$AutomobileDragCoefficient = mysqli_real_escape_string($conn, $_POST["Air-Drag-Coefficient"]);
+$AutomobileDragCoefficient = (float) $_POST["Air-Drag-Coefficient"];
 echo $AutomobileDragCoefficient;
 echo "<br>";
-$distance = mysqli_real_escape_string($conn, $_POST["Distance"]);
+$distance = (float) $_POST["Distance"];
 echo $distance;
 echo "<br>";
 $Accelaration = 0;
 
-$WindStrength = mysqli_real_escape_string($conn, $_POST["WindStrength"]);
-$WindAngle = mysqli_real_escape_string($conn, $_POST["WindAngle"]);
+$WindStrength = (float) $_POST["WindStrength"];
+$WindAngle = (float) $_POST["WindAngle"];
 
 
 /** Constants */
